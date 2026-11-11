@@ -53,7 +53,7 @@ sed -E 's/^([A-Z_]+)\s*=\s*"?([^"]*)"?\s*$/\1=\2/' .env > .env.docker
 # -p 8501:8501 = map the container's port to the same port on our
 # machine. --env-file = load the secrets from the file we just made.
 # ============================================================
-docker run -d --name hr-assistant-app -p 8501:8501 --env-file .env.docker hr-assistant
+
 
 # confirm it's running, then watch it live
 docker ps
@@ -76,7 +76,7 @@ docker login
 
 # "tag" = label the image with your Docker Hub username, so Docker
 # Hub knows which account's repository to upload it to
-docker tag hr-assistant dcrazzy/hr-assistant:latest
+docker tag hr-assistant harshshukla1530/hr-assistant:latest
 
 # actually upload it
 docker push dcrazzy/hr-assistant:latest
@@ -99,11 +99,11 @@ docker images
 # This is exactly what a teammate, or a cloud server, would run to
 # get your app - a plain download, no source code involved.
 # ============================================================
-docker pull dcrazzy/hr-assistant:latest
+docker pull harshshukla1530/hr-assistant:latest
 docker images
 
 # run the pulled copy on a different port, to prove it's the same app
-docker run -d --name hr-assistant-from-hub -p 8502:8501 --env-file .env.docker dcrazzy/hr-assistant:latest
+docker run -d --name hr-assistant-from-hub -p 8502:8501 --env-file .env.docker harshshukla1530/hr-assistant:latest
 docker ps
 # check http://localhost:8502 - same app, this time from Docker Hub
 
