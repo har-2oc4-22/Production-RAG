@@ -43,7 +43,7 @@ sed -E 's/^([A-Z_]+)\s*=\s*"?([^"]*)"?\s*$/\1=\2/' .env > .env.docker
 # ============================================================
 docker compose build
 
-docker images | grep -i basicrag
+docker images | grep -i basic-rag
 
 
 # ============================================================
@@ -84,19 +84,19 @@ docker compose run --rm eval
 # ============================================================
 docker login
 
-docker tag basicrag-app dcrazzy/hr-assistant-app:latest
-docker tag basicrag-eval dcrazzy/hr-assistant-eval:latest
+docker tag basic-rag-app harshshukla1530/hr-assistant-app:latest
+docker tag basic-rag-eval harshshukla1530/hr-assistant-eval:latest
 
-docker push dcrazzy/hr-assistant-app:latest
-docker push dcrazzy/hr-assistant-eval:latest
+docker push harshshukla1530/hr-assistant-app:latest
+docker push harshshukla1530/hr-assistant-eval:latest
 
 
 # ============================================================
 # STEP 8 - Delete locally, then pull back down to prove it's real
 # ============================================================
-docker rmi dcrazzy/hr-assistant-app:latest dcrazzy/hr-assistant-eval:latest
+docker rmi harshshukla1530/hr-assistant-app:latest harshshukla1530/hr-assistant-eval:latest
 
-docker pull dcrazzy/hr-assistant-app:latest
+docker pull harshshukla1530/hr-assistant-app:latest
 docker images | grep -i hr-assistant
 
 
@@ -107,7 +107,7 @@ docker images | grep -i hr-assistant
 # ============================================================
 docker compose down
 
-docker rmi basicrag-app basicrag-eval dcrazzy/hr-assistant-app:latest dcrazzy/hr-assistant-eval:latest
+docker rmi basic-rag-app basic-rag-eval harshshukla1530/hr-assistant-app:latest harshshukla1530/hr-assistant-eval:latest
 
 docker logout
 

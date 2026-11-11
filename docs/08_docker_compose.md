@@ -87,7 +87,7 @@ services:
 | `docker compose down` | Stop and remove every container *and* the network Compose created for this project. | `docker compose down` |
 | `docker compose stop` | Stop containers but leave them in place (faster to restart later). | `docker compose stop` |
 | `docker compose rm -f` | Remove stopped containers without stopping first. | `docker compose rm -f` |
-| `docker rmi <project>-app <project>-eval` | Remove the images Compose built (the project name defaults to the folder name). | `docker rmi basicrag-app basicrag-eval` |
+| `docker rmi <project>-app <project>-eval` | Remove the images Compose built (the project name defaults to the folder name). | `docker rmi basic-rag-app basic-rag-eval` |
 
 `docker compose down` is the one you want almost every time - it's the
 clean, complete teardown.

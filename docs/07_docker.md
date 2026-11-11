@@ -171,11 +171,11 @@ time via `--env-file`, never stored in the image itself.
 | Command | What it does | Example |
 |---|---|---|
 | `docker login` | Authenticate with Docker Hub (prompts for username/password or token). | `docker login` |
-| `docker tag <image> <username>/<image>:<tag>` | Label a local image with the name it'll have on Docker Hub. | `docker tag hr-assistant dcrazzy/hr-assistant:latest` |
-| `docker push <username>/<image>:<tag>` | Upload the tagged image to Docker Hub. | `docker push dcrazzy/hr-assistant:latest` |
-| `docker pull <username>/<image>:<tag>` | Download an image from Docker Hub (what a cloud server would do). | `docker pull dcrazzy/hr-assistant:latest` |
+| `docker tag <image> <username>/<image>:<tag>` | Label a local image with the name it'll have on Docker Hub. | `docker tag hr-assistant harshshukla1530/hr-assistant:latest` |
+| `docker push <username>/<image>:<tag>` | Upload the tagged image to Docker Hub. | `docker push harshshukla1530/hr-assistant:latest` |
+| `docker pull <username>/<image>:<tag>` | Download an image from Docker Hub (what a cloud server would do). | `docker pull harshshukla1530/hr-assistant:latest` |
 | `docker logout` | End your Docker Hub session on this machine. | `docker logout` |
-| `docker rmi <username>/<image>:<tag>` | Remove the tagged copy locally once you're done (the pushed copy stays on Docker Hub). | `docker rmi dcrazzy/hr-assistant:latest` |
+| `docker rmi <username>/<image>:<tag>` | Remove the tagged copy locally once you're done (the pushed copy stays on Docker Hub). | `docker rmi harshshukla1530/hr-assistant:latest` |
 
 ## Assignment for students
 
