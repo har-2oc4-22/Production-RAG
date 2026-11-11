@@ -12,24 +12,16 @@ LangSmith as a Dataset + Experiment,
 so quality can be compared across
 runs (after a prompt change, a new model, a new guardrail, etc).
 
-The judge model is routed through Portkey too,
-using the same slug as
-the main app's LLM (gateway.py's PRIMARY_PROVIDER) 
-but a different
-underlying model (JUDGE_MODEL_NAME) - 
-so it isn't grading its own
-output verbatim, without needing a second slug set up.
+The judge model uses Groq directly (JUDGE_MODEL_NAME)
+to score answers for correctness and groundedness.
 """
 
-
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 from langsmith import Client
 from openevals.llm import create_llm_as_judge
 from openevals.prompts import CORRECTNESS_PROMPT, RAG_GROUNDEDNESS_PROMPT
-from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 from hr_assistant import config
-from hr_assistant.gateway import PRIMARY_PROVIDER
 from hr_assistant.logger import get_logger
 from hr_assistant.pipeline import ask, build_hr_assistant
 from hr_assistant.vector_store import get_retriever, load_vector_store
@@ -64,14 +56,12 @@ JUDGE_MODEL_NAME = "openai/gpt-oss-20b"
 
 # making  a judge llm
 
-def _get_judge_llm() -> ChatOpenAI:
-    """Return a judge model routed through Portkey, same slug as the main app."""
-    headers = createHeaders(api_key=config.PORTKEY_API_KEY, 
-            provider=PRIMARY_PROVIDER)
-    return ChatOpenAI(api_key="portkey", 
-        base_url=PORTKEY_GATEWAY_URL, 
-        default_headers=headers, 
-        model=JUDGE_MODEL_NAME)
+def _get_judge_llm() -> ChatGroq:
+    """Return a judge model using Groq directly."""
+    return ChatGroq(
+        api_key=config.GROQ_API_KEY,
+        model=JUDGE_MODEL_NAME,
+    )
     
 # if dataset is there reuse it , if not create a new dataset 
 # question paper 

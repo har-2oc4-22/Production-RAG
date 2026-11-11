@@ -11,10 +11,6 @@ load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 JINA_API_KEY = os.getenv("JINA_API_KEY")
 
-# GATEWAY 
-
-PORTKEY_API_KEY = os.getenv("PORTKEY_API_KEY")
-
 # GUARD MODEL 
 
 GUARD_MODEL_NAME = "openai/gpt-oss-safeguard-20b"
@@ -77,5 +73,3 @@ def check_api_keys() -> None:
         raise ValueError("Missing JINA_API_KEY. Please add it to your .env file.")
     if not QDRANT_URL or not QDRANT_API_KEY:
         raise ValueError("Missing QDRANT_URL/QDRANT_API_KEY. Please add them to your .env file.")
-    if not PORTKEY_API_KEY:
-        raise ValueError("Missing PORTKEY_API_KEY. Please add it to your .env file.")

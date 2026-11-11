@@ -1,7 +1,7 @@
 """Smoke test: confirms ask(agent, question) actually works end-to-end
 before CI spends time/money on the full evaluation suite.
 
-Builds the real agent (real Groq/Jina/Qdrant/Portkey calls) and asks it one
+Builds the real agent (real Groq/Jina/Qdrant calls) and asks it one
 question - this is deliberately an integration check, not a mocked unit test.
 """
 

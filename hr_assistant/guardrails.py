@@ -27,8 +27,6 @@ REFUSAL_MESSAGE = "Sorry, I can't help with that request."
 
 # private varibales , private methods 
 
-# assignment , you will use portkey gateway to replay chatgroq from guardllm
-
 _guard_llm = ChatGroq(
     model=config.GUARD_MODEL_NAME,
     temperature=0,

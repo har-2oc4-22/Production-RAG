@@ -5,14 +5,11 @@ from langchain_groq import ChatGroq
 from hr_assistant import config
 from hr_assistant.logger import get_logger
 
-# Note: To re-enable Portkey gateway later, import and call get_gateway_llm from hr_assistant.gateway
-# from hr_assistant.gateway import get_gateway_llm
-
 logger = get_logger(__name__)
 
 
 def get_llm():
-    """Return a Groq chat model directly (Portkey bypassed for now)."""
+    """Return a Groq chat model directly."""
     logger.info("Initializing LLM via Groq directly")
     return ChatGroq(
         model=config.LLM_MODEL_NAME,

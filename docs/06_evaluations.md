@@ -1,6 +1,6 @@
 # 06. Evaluations (LangSmith Datasets + Experiments)
 
-**Branch:** `evaluations` (built on top of `portkey-gateway`)
+**Branch:** `evaluations`
 
 ## Tracing vs. evaluation - what's the difference?
 
@@ -21,7 +21,7 @@ if quality actually went up or down.
 target(): the real agent answers each one
       |
       v
-judge LLM (@hrpolicy, different model) scores each answer:
+judge LLM (Groq, different model) scores each answer:
    - correctness   (matches the reference answer?)
    - groundedness   (supported by the retrieved chunks?)
       |
@@ -55,9 +55,7 @@ Experiment view without any extra code.
 
 ## The judge model
 
-Both evaluators use the same judge LLM, routed through Portkey on the
-same slug as the main app (`@hrpolicy` - see `docs/05_portkey_gateway.md`
-for why there's only one slug in use) but a **different underlying
+Both evaluators use the same judge LLM (Groq) with a **different underlying
 model**, so it isn't grading its own output verbatim.
 
 ## The 10 test cases

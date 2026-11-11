@@ -94,9 +94,3 @@ wasn't a code/DNS issue via direct `curl`). Once an active cluster URL
 2. Try changing `QDRANT_COLLECTION_NAME` in `.env` to a new name and
    rerun - confirm the app builds a brand new collection instead of
    reusing the old one, since `vector_store_exists()` checks by name.
-3. (Optional) Portkey (used in the next branch) can also proxy and log
-   Qdrant requests, not just LLM calls - see
-   [Portkey's Qdrant integration docs](https://portkey.ai/docs/integrations/vector-databases/qdrant).
-   We didn't wire this up here to keep this branch minimal, but it's
-   worth exploring once both `qdrant-cloud` and `portkey-gateway` are in
-   place.

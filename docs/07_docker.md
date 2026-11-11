@@ -137,7 +137,7 @@ Docker's stricter format), and confirmed, live:
 - `curl http://localhost:8501/_stcore/health` returned `200`.
 - The deeper check: `docker exec`'d into the running container and
   called `build_hr_assistant()` / `ask()` directly - confirmed real
-  HTTP `200`s from Qdrant Cloud, Portkey (`provider=@hrpolicy`), and
+  HTTP `200`s from Qdrant Cloud, Groq, and
   Groq, and got back the correct answer: *"You're entitled to 20 paid
   annual leave days per calendar year..."* - proof the whole pipeline
   genuinely works inside the container, not just that Streamlit's

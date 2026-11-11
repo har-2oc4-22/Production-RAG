@@ -42,8 +42,6 @@ def load_vector_store():
         api_key=config.QDRANT_API_KEY,
         collection_name=config.QDRANT_COLLECTION_NAME,
     )
-
-
 def vector_store_exists() -> bool:
     """Check if the Qdrant Cloud collection already exists."""
     client = QdrantClient(url=config.QDRANT_URL, api_key=config.QDRANT_API_KEY)
