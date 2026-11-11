@@ -37,4 +37,11 @@ Thumbs.db
 # aws secrets 
 
 hrrag_accessKeys.csv
+hr-rag_accessKeys.csv
+*.csv
 key-to-connect.pem
+*.pem
+
+Basic-Rag\hr-rag_accessKeys.csv
+Basic-Rag\hr.pem
+Basic-Rag\hr-rag_accessKeys.csv
