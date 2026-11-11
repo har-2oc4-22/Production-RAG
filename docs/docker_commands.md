@@ -79,7 +79,7 @@ docker login
 docker tag hr-assistant harshshukla1530/hr-assistant:latest
 
 # actually upload it
-docker push dcrazzy/hr-assistant:latest
+docker push harshshukla1530/hr-assistant:latest
 
 
 # ============================================================
@@ -87,7 +87,7 @@ docker push dcrazzy/hr-assistant:latest
 # This proves the next step (pull) is a real download from Docker
 # Hub, not just reusing something already sitting on our machine.
 # ============================================================
-docker rmi dcrazzy/hr-assistant:latest
+docker rmi harshshukla1530/hr-assistant:latest
 
 # confirm the Docker Hub tag is gone (the original "hr-assistant"
 # local tag from Step 3 is untouched - only the tagged copy is deleted)
@@ -115,7 +115,7 @@ docker ps
 # ============================================================
 docker stop hr-assistant-app hr-assistant-from-hub
 docker rm hr-assistant-app hr-assistant-from-hub
-docker rmi hr-assistant dcrazzy/hr-assistant:latest
+docker rmi hr-assistant harshshukla1530/hr-assistant:latest
 docker logout
 
 # confirm everything is really gone
